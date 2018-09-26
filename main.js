@@ -41,14 +41,14 @@ client = new Paho.MQTT.Client("m21.cloudmqtt.com", 31277, "web_" + parseInt(Math
   }
 
 function toggleSonon() {
-			message = new Paho.MQTT.Message("toggleSonon");
+			message = new Paho.MQTT.Message("toggleSon-on");
 		    message.destinationName = "demo";
 		    client.send(message);
             console.log("toggleSonon");        
         };
 
 function toggleSonoff() {
-			message = new Paho.MQTT.Message("toggleSonoff");
+			message = new Paho.MQTT.Message("toggleSon-off");
 		    message.destinationName = "demo";
 		    client.send(message);
             console.log("toggleSonoff");        
