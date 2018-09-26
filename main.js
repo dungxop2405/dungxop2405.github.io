@@ -57,11 +57,11 @@ function toggleSonoff() {
 $(document).ready(function(){
 	$('#on').on('change',function(){
     	if(this.checked){
-    		$("#info").text("U checked me, place some code here");
+    		$("#info").text("ON");
     		toggleSonon();
     	}
         else{
-        	$("#info").text("U unchecked me, another piece of code here");
+        	$("#info").text("OFF");
         	toggleSonoff();
         }
     });
