@@ -19,7 +19,7 @@ client = new Paho.MQTT.Client("m21.cloudmqtt.com", 31277, "web_" + parseInt(Math
     // Once a connection has been made, make a subscription and send a message.
     console.log("onConnect");
     client.subscribe("demo");
-    message = new Paho.MQTT.Message("Hello CloudMQTT");
+    message = new Paho.MQTT.Message("Web CloudMQTT");
     message.destinationName = "demo";
     client.send(message);
   }
