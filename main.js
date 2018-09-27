@@ -43,10 +43,10 @@ client = new Paho.MQTT.Client("m21.cloudmqtt.com", 31277, "web_" + parseInt(Math
   // called when a message arrives
   function onMessageArrived(message) {
     myMsg = message.payloadString;
-    if(myMsg=="On"){
+    if(myMsg=="on"){
     	document.getElementById("on").checked = true;
     }   
-    else if(myMsg=="Off"){
+    else if(myMsg=="off"){
     	document.getElementById("on").checked = false;
     }
   }
