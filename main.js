@@ -68,11 +68,11 @@ function toggleSonoff() {
 $(document).ready(function(){
 	$('#on').on('change',function(){
     	if(this.checked){
-    		$("#info").text("ON");
+    		//$("#info").text("ON");
     		toggleSonon();
     	}
         else{
-        	$("#info").text("OFF");
+        	//$("#info").text("OFF");
         	toggleSonoff();
         }
     });
