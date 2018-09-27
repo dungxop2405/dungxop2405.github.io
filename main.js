@@ -55,14 +55,14 @@ function toggleSonon() {
 			message = new Paho.MQTT.Message("toggleSonon");
 		    message.destinationName = "demo";
 		    client.send(message);
-            console.log("toggleSonon");        
+            console.log("toggleSon-on");        
         };
 
 function toggleSonoff() {
 			message = new Paho.MQTT.Message("toggleSonoff");
 		    message.destinationName = "demo";
 		    client.send(message);
-            console.log("toggleSonoff");        
+            console.log("toggleSon-off");        
         };
 
 $(document).ready(function(){
