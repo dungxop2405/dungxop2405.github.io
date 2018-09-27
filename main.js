@@ -19,7 +19,7 @@ client = new Paho.MQTT.Client("m21.cloudmqtt.com", 31277, "web_" + parseInt(Math
     // Once a connection has been made, make a subscription and send a message.
     console.log("onConnect");
     client.subscribe("demo");
-    message = new Paho.MQTT.Message("Web CloudMQTT");
+    message = new Paho.MQTT.Message("Hello CloudMQTT");
     message.destinationName = "demo";
     client.send(message);
   }
@@ -39,16 +39,27 @@ client = new Paho.MQTT.Client("m21.cloudmqtt.com", 31277, "web_" + parseInt(Math
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
   }
+  myMsg = null;
+  // called when a message arrives
+  function onMessageArrived(message) {
+    myMsg = message.payloadString;
+    if(myMsg=="On"){
+    	document.getElementById("on").checked = true;
+    }   
+    else if(myMsg=="Off"){
+    	document.getElementById("on").checked = false;
+    }
+  }
 
 function toggleSonon() {
-			message = new Paho.MQTT.Message("toggleSon-on");
+			message = new Paho.MQTT.Message("toggleSonon");
 		    message.destinationName = "demo";
 		    client.send(message);
             console.log("toggleSonon");        
         };
 
 function toggleSonoff() {
-			message = new Paho.MQTT.Message("toggleSon-off");
+			message = new Paho.MQTT.Message("toggleSonoff");
 		    message.destinationName = "demo";
 		    client.send(message);
             console.log("toggleSonoff");        
