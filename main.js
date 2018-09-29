@@ -43,26 +43,26 @@ client = new Paho.MQTT.Client("m21.cloudmqtt.com", 31277, "web_" + parseInt(Math
   // called when a message arrives
   function onMessageArrived(message) {
     myMsg = message.payloadString;
-    if(myMsg=="on"){
+    if(myMsg=="On"){
     	document.getElementById("on").checked = true;
     }   
-    else if(myMsg=="off"){
+    else if(myMsg=="Off"){
     	document.getElementById("on").checked = false;
     }
   }
 
 function toggleSonon() {
-			message = new Paho.MQTT.Message("toggleSon-on");
+			message = new Paho.MQTT.Message("toggleSonon");
 		    message.destinationName = "demo";
 		    client.send(message);
-            console.log("toggleSon-on");        
+            console.log("toggleSonon");        
         };
 
 function toggleSonoff() {
-			message = new Paho.MQTT.Message("toggleSon-off");
+			message = new Paho.MQTT.Message("toggleSonoff");
 		    message.destinationName = "demo";
 		    client.send(message);
-            console.log("toggleSon-off");        
+            console.log("toggleSonoff");        
         };
 
 $(document).ready(function(){
@@ -76,4 +76,8 @@ $(document).ready(function(){
         	toggleSonoff();
         }
     });
+});
+
+$.getJSON("data.json", function(json) {
+    console.log(json); // this will show the info it in firebug console
 });

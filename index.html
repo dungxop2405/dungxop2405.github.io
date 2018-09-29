@@ -2,21 +2,23 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>project web mqtt</title>
+        <title>bootstrap</title>
         <link rel="stylesheet" href="css/styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"></script>
+        <script src="data.js"></script>
+
     </head>
     <body>
-        <!-- Rectangular switch -->
-        <label class="switch">
-          <input id = "on" type="checkbox">
-          <span class="slider" data-on="On" data-off="Off"></span>
-        </label>
-        <p id="info"></p>
-
+        <div class="main">
+            <!-- Rectangular switch -->
+            <label class="switch">
+              <input id = "on" type="checkbox">
+              <span class="slider" data-on="On" data-off="Off"></span>
+            </label>
+            <p id="info"></p>
+        </div>
     </body>
 
     <script src="main.js"></script>
 </html>
-
